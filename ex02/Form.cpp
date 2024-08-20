@@ -85,12 +85,12 @@ void Form::beSigned(Bureaucrat& bur)
 	}
 }
 
-const char *Bureaucrat::GradeTooHighException::what() const throw()
+const char *Form::GradeTooHighException::what() const throw()
 {
 	return "TooHigh";
 }
 
-const char *Bureaucrat::GradeTooLowException::what() const throw()
+const char *Form::GradeTooLowException::what() const throw()
 {
 	return "TooLow";
 }
