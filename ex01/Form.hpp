@@ -21,17 +21,11 @@ class Form
 		Form& operator=(const Form& f);
 		class GradeTooHighException : public std::exception
 		{
-			const char* what() const throw()
-			{
-				return "TooHigh";
-			}
+			const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception
 		{
-			const char* what() const throw()
-			{
-				return "TooLow";
-			}
+			const char* what() const throw();
 		};
 		std::string getName();
 		bool		getSign();
