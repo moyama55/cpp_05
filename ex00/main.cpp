@@ -2,7 +2,7 @@
 
 int main()
 {
-	Bureaucrat test1("kmotoyam", 100);
+	Bureaucrat test1("kmotoyam", 160);
 	Bureaucrat test2("kmotoyam", 0);
 	Bureaucrat test3("kmotoyam", 10);
 	test1.decrease();

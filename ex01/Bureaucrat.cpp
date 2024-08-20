@@ -1,7 +1,21 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : _name("none"), _grade(130)
-{}
+{
+	try
+	{
+		if (this->_grade > 150)
+			throw GradeTooLowException();
+		else if (this->_grade < 0)
+			throw GradeTooHighException();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+		std::exit(1);
+	}
+}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
@@ -10,7 +24,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 	{
 		if (this->_grade > 150)
 			throw GradeTooLowException();
-		else if (this->_grade <= 0)
+		else if (this->_grade < 0)
 			throw GradeTooHighException();
 	}
 	catch(const std::exception& e)
@@ -71,8 +85,15 @@ void	Bureaucrat::increase()
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
-		std::exit(1);
 	}
+}
+
+void	Bureaucrat::signForm(Form& fm)
+{
+	if (fm.getSign() == true)
+		std::cout << "bureaucrat sigend form" << std::endl; 
+	else
+		std::cout << "bureaucrat" << " couldn't sign " << "form" << " because unresolved" << std::endl;
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
@@ -84,7 +105,6 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return "TooLow";
 }
-
 
 std::ostream& operator<<(std::ostream&os, Bureaucrat& bur)
 {

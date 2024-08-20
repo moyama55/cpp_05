@@ -4,11 +4,13 @@
 #include <iostream>
 #include <string>
 
+class Form;
+
 class Bureaucrat
 {
 	private:
 		const std::string _name;
-		int				  _grade;
+		int			_grade;
 	public:
 		Bureaucrat();
 		Bureaucrat(std::string name, int grade);
@@ -27,6 +29,7 @@ class Bureaucrat
 		{
 			const char* what() const throw();
 		};
+		void signForm(Form& fm);
 };
 
 std::ostream& operator<<(std::ostream&os, Bureaucrat& bur);
