@@ -88,7 +88,7 @@ void	Bureaucrat::increase()
 	}
 }
 
-void	Bureaucrat::signForm(Form& fm)
+void	Bureaucrat::signForm(AForm& fm)
 {
 	if (fm.getSign() == true)
 		std::cout << "bureaucrat sigend form" << std::endl; 

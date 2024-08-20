@@ -29,7 +29,7 @@ class Bureaucrat
 		{
 			const char* what() const throw();
 		};
-		void signForm(Form& fm);
+		void signForm(AForm& fm);
 };
 
 std::ostream& operator<<(std::ostream&os, Bureaucrat& bur);

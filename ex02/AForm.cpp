@@ -1,7 +1,7 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form() : name_("Dirty"), sign_(false), canBeSign_(30), canBeExec_(50)
+AForm::AForm() : name_("Dirty"), sign_(false), canBeSign_(30), canBeExec_(50)
 {
 	try
 	{
@@ -17,7 +17,7 @@ Form::Form() : name_("Dirty"), sign_(false), canBeSign_(30), canBeExec_(50)
 	}
 }
 
-Form::Form(std::string name, int beSign, int beExec) : name_(name), canBeSign_(beSign), canBeExec_(beExec)
+AForm::AForm(std::string name, int beSign, int beExec) : name_(name), canBeSign_(beSign), canBeExec_(beExec)
 {
 	this->sign_ = false;
 	try
@@ -35,41 +35,41 @@ Form::Form(std::string name, int beSign, int beExec) : name_(name), canBeSign_(b
 	
 }
 
-Form::Form(const Form& other) : name_(other.name_), canBeSign_(other.canBeSign_), canBeExec_(other.canBeExec_)
+AForm::AForm(const AForm& other) : name_(other.name_), canBeSign_(other.canBeSign_), canBeExec_(other.canBeExec_)
 {
 	*this = other;
 }
 
-Form::~Form()
+AForm::~AForm()
 {}
 
-Form& Form::operator=(const Form& other)
+AForm& AForm::operator=(const AForm& other)
 {
 	this->sign_ = other.sign_;
 	return (*this);
 }
 
-std::string Form::getName()
+std::string AForm::getName()
 {
 	return this->name_;
 }
 
-bool Form::getSign()
+bool AForm::getSign()
 {
 	return this->sign_;
 }
 
-int Form::getBeSign()
+int AForm::getBeSign()
 {
 	return this->canBeSign_;
 }
 
-int Form::getBeExec()
+int AForm::getBeExec()
 {
 	return this->canBeExec_;
 }
 
-void Form::beSigned(Bureaucrat& bur)
+void AForm::beSigned(Bureaucrat& bur)
 {
 	try
 	{
@@ -85,17 +85,17 @@ void Form::beSigned(Bureaucrat& bur)
 	}
 }
 
-const char *Form::GradeTooHighException::what() const throw()
+const char *AForm::GradeTooHighException::what() const throw()
 {
 	return "TooHigh";
 }
 
-const char *Form::GradeTooLowException::what() const throw()
+const char *AForm::GradeTooLowException::what() const throw()
 {
 	return "TooLow";
 }
 
-std::ostream& operator<<(std::ostream&os, Form& other)
+std::ostream& operator<<(std::ostream&os, AForm& other)
 {
 	os << other.getName() << ", indicating whether it is signed is " << other.getSign() << " , grade required to sign is " << other.getBeSign()
 	<< " grade required to execute is " << other.getBeExec();

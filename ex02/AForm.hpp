@@ -6,7 +6,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	private:
 		const std::string	name_;
@@ -14,11 +14,11 @@ class Form
 		const int			canBeSign_;
 		const int			canBeExec_;
 	public:
-		Form();
-		Form(std::string name, int beSign, int beExec);
-		~Form();
-		Form(const Form& f);
-		Form& operator=(const Form& f);
+		AForm();
+		AForm(std::string name, int beSign, int beExec);
+		~AForm();
+		AForm(const AForm& f);
+		AForm& operator=(const AForm& f);
 		class GradeTooHighException : public std::exception
 		{
 			const char* what() const throw();
@@ -34,6 +34,6 @@ class Form
 		void		beSigned(Bureaucrat& bur);
 };
 
-std::ostream& operator<<(std::ostream&os, Form& other);
+std::ostream& operator<<(std::ostream&os, AForm& other);
 
 #endif
