@@ -90,10 +90,17 @@ void	Bureaucrat::increase()
 
 void	Bureaucrat::signForm(Form& fm)
 {
-	if (fm.getSign() == true)
-		std::cout << "bureaucrat sigend form" << std::endl; 
-	else
-		std::cout << "bureaucrat" << " couldn't sign " << "form" << " because unresolved" << std::endl;
+	try
+	{
+		if (fm.getSign() == true)
+			std::cout << this->_name << " signed " << fm.getName();
+		else
+			throw GradeTooLowException();
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->getName() << " couldn't sign " << fm.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
