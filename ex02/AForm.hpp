@@ -27,11 +27,12 @@ class AForm
 		{
 			const char* what() const throw();
 		};
-		std::string getName();
-		bool		getSign();
-		int			getBeSign();
-		int			getBeExec();
-		void		beSigned(Bureaucrat& bur);
+		std::string 	getName();
+		bool			getSign();
+		int				getBeSign();
+		int				getBeExec();
+		void			beSigned(Bureaucrat& bur);
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream& operator<<(std::ostream&os, AForm& other);
