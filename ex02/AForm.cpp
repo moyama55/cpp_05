@@ -49,22 +49,22 @@ AForm& AForm::operator=(const AForm& other)
 	return (*this);
 }
 
-std::string AForm::getName()
+std::string AForm::getName() const
 {
 	return this->name_;
 }
 
-bool AForm::getSign()
+bool AForm::getSign() const
 {
 	return this->sign_;
 }
 
-int AForm::getBeSign()
+int AForm::getBeSign() const
 {
 	return this->canBeSign_;
 }
 
-int AForm::getBeExec()
+int AForm::getBeExec() const
 {
 	return this->canBeExec_;
 }
@@ -93,6 +93,21 @@ const char *AForm::GradeTooHighException::what() const throw()
 const char *AForm::GradeTooLowException::what() const throw()
 {
 	return "TooLow";
+}
+
+const char *AForm::BothErrorException::what() const throw()
+{
+	return "BothError";
+}
+
+const char *AForm::UnSignedException::what() const throw()
+{
+	return "UnSigned";
+}
+
+const char *AForm::UnExecException::what() const throw()
+{
+	return "UnExec";
 }
 
 std::ostream& operator<<(std::ostream&os, AForm& other)

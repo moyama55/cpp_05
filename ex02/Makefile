@@ -1,7 +1,7 @@
 CXX		:= c++
 FLAGS	:= -Wall -Wextra -Werror -std=c++98
 NAME 	:= Bureaucrat
-SRCS	:= main.cpp Bureaucrat.cpp AForm.cpp
+SRCS	:= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJS	:= $(SRCS:.cpp=.o)
 
 all : $(NAME)
@@ -16,6 +16,6 @@ clean:
 	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) Shrubbery_shrubbery
 
 re:	fclean all

@@ -27,10 +27,22 @@ class AForm
 		{
 			const char* what() const throw();
 		};
-		std::string 	getName();
-		bool			getSign();
-		int				getBeSign();
-		int				getBeExec();
+		class BothErrorException : public std::exception
+		{
+			const char* what() const throw();
+		};
+		class UnSignedException : public std::exception
+		{
+			const char* what() const throw();
+		};
+		class UnExecException : public std::exception
+		{
+			const char* what() const throw();
+		};
+		std::string 	getName() const;
+		bool			getSign() const;
+		int				getBeSign() const;
+		int				getBeExec() const;
 		void			beSigned(Bureaucrat& bur);
 		virtual void	execute(Bureaucrat const & executor) const = 0;
 };

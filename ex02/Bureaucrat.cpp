@@ -1,5 +1,6 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name("none"), _grade(130)
 {
@@ -49,12 +50,12 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& bur)
 	return (*this);
 }
 
-std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const
 {
 	return this->_name;
 }
 
-int		Bureaucrat::getGrade()
+int		Bureaucrat::getGrade() const
 {
 	return this->_grade;
 }
@@ -104,6 +105,20 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return "TooLow";
+}
+
+void Bureaucrat::executeForm(AForm const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 }
 
 std::ostream& operator<<(std::ostream&os, Bureaucrat& bur)
