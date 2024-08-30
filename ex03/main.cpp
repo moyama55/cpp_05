@@ -25,9 +25,12 @@ int main()
 	//Intern test:
 	Bureaucrat inTest("kmotoyam", 1);
 	Intern in;
-	AForm* sc2 = in.makeForm("adadad", "home");
+	AForm* sc2 = in.makeForm("RobotomyRequest", "home");
 	sc2->beSigned(inTest);
 	inTest.executeForm(*sc2);
+	delete sc1;
+	delete rr1;
+	delete pp1;
 	// /* exec error pattern */
 	// Bureaucrat scTestFailerGrade("kmotoyam", 144);
 	// AForm* sc2 = new ShrubberyCreationForm;
