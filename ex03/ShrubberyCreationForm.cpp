@@ -3,9 +3,6 @@
 ShrubberyCreationForm::ShrubberyCreationForm(): AForm("Shrubbery", 145, 137)
 {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target, int sign, int exec): AForm(target, sign, exec)
-{}
-
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {}
 
@@ -34,7 +31,17 @@ void ShrubberyCreationForm::executalble() const
 	std::ofstream	writingFile;
 	std::string		filename = this->getName();
 	filename += "_shrubbery";
-	writingFile.open(filename, std::ios::out);
-	std::string writeText = TREE;
-	writingFile << writeText << std::endl;
+	try
+	{
+		writingFile.open(filename, std::ios::out);
+		if (writingFile.is_open() == false)
+			throw std::exception();
+		std::string writeText = TREE;
+		writingFile << writeText << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+        std::cerr << "Caught an ios_base::failure exception: " << e.what() << std::endl;
+        std::cerr << "Error opening file: " << filename << std::endl;
+    }
 }

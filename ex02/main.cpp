@@ -9,20 +9,22 @@ int main()
 	// ShrubberyCreationForm Test;
 	Bureaucrat scTestConfirm("kmotoyma", 120);
 	AForm* sc1 = new ShrubberyCreationForm;
-	sc1->beSigned(scTestConfirm);
+	scTestConfirm.signForm(*sc1);
 	scTestConfirm.executeForm(*sc1);
 	//RobotomyRequestForm Test;
 	Bureaucrat rrTestConfirm("kmotoyam", 30);
 	AForm* rr1 = new RobotomyRequestForm;
-	rr1->beSigned(rrTestConfirm);
+	rrTestConfirm.signForm(*rr1);
 	rrTestConfirm.executeForm(*rr1);
 	//PresidentialPardonForm Test;
 	Bureaucrat ppTestConfirm("kmotoyam", 3);
 	AForm* pp1 = new PresidentalPardonForm;
-	pp1->beSigned(ppTestConfirm);
+	ppTestConfirm.signForm(*pp1);
 	ppTestConfirm.executeForm(*pp1);
 
-	
+	delete sc1;
+	delete rr1;
+	delete pp1;
 	// /* exec error pattern */
 	// Bureaucrat scTestFailerGrade("kmotoyam", 144);
 	// AForm* sc2 = new ShrubberyCreationForm;

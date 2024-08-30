@@ -6,9 +6,6 @@ PresidentalPardonForm::PresidentalPardonForm(): AForm("Obama", 25, 5)
 PresidentalPardonForm::~PresidentalPardonForm()
 {}
 
-PresidentalPardonForm::PresidentalPardonForm(std::string target, int sign, int exec): AForm(target, sign, exec)
-{}
-
 PresidentalPardonForm::PresidentalPardonForm(PresidentalPardonForm& other) : AForm(other.getName(), other.getBeSign(), other.getBeExec())
 {}
 
@@ -31,5 +28,5 @@ void PresidentalPardonForm::execute(Bureaucrat const & executor) const
 
 void PresidentalPardonForm::executalble() const
 {
-	std::cout << "Zaphod Beeblebrox allowed " << this->getName() << std::endl;
+	std::cout << "Zaphod Beeblebrox pardoned  " << this->getName() << std::endl;
 }

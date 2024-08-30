@@ -29,7 +29,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 void RobotomyRequestForm::executalble() const
 {
 	srand((unsigned int)time(NULL));
-	if (rand() % 10 + 1 <= 5)
+	if (rand() % 2 == 0)
 		std::cout << this->getName() << " is became a robot " << std::endl;
 	else
 		std::cout << this->getName() << " couldn't become a robot " << std::endl; 

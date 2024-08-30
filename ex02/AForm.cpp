@@ -71,18 +71,11 @@ int AForm::getBeExec() const
 
 void AForm::beSigned(Bureaucrat& bur)
 {
-	try
-	{
-		if (this->canBeSign_ < bur.getGrade())
-			throw GradeTooLowException();
-		else
-			this->sign_ = true;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-		std::exit(1);
-	}
+
+	if (this->canBeSign_ < bur.getGrade())
+		throw GradeTooLowException();
+	else
+		this->sign_ = true;
 }
 
 const char *AForm::GradeTooHighException::what() const throw()

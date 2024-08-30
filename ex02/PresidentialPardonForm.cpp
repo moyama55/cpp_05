@@ -28,5 +28,5 @@ void PresidentalPardonForm::execute(Bureaucrat const & executor) const
 
 void PresidentalPardonForm::executalble() const
 {
-	std::cout << "Zaphod Beeblebrox allowed " << this->getName() << std::endl;
+	std::cout << "Zaphod Beeblebrox pardoned " << this->getName() << std::endl;
 }

@@ -27,6 +27,7 @@ AForm* Intern::makeForm(std::string name, std::string target)
 		if (cmd_array[i] == name)
 			break;
 	}
+	std::cout << "Intern creates " << cmd_array[i] << std::endl;
 	switch (i)
 	{
 		case 0:
