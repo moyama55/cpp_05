@@ -3,6 +3,9 @@
 RobotomyRequestForm::RobotomyRequestForm(): AForm("Robot", 72, 45)
 {}
 
+RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm(target, 72, 45)
+{}
+
 RobotomyRequestForm::~RobotomyRequestForm()
 {}
 

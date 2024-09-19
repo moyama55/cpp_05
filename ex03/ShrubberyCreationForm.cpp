@@ -3,6 +3,9 @@
 ShrubberyCreationForm::ShrubberyCreationForm(): AForm("Shrubbery", 145, 137)
 {}
 
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm(target, 145, 137)
+{}
+
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {}
 

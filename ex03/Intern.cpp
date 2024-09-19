@@ -33,7 +33,7 @@ AForm* Intern::makeForm(std::string name, std::string target)
 		case 0:
 			try
 			{
-				form = new PresidentalPardonForm(target, 145, 137);
+				form = new PresidentalPardonForm(target);
 				break;
 			}
 			catch(const std::bad_alloc& e)
@@ -44,7 +44,7 @@ AForm* Intern::makeForm(std::string name, std::string target)
 		case 1:
 			try
 			{
-				form = new RobotomyRequestForm(target, 72, 45);
+				form = new RobotomyRequestForm(target);
 				break;	
 			}
 			catch(const std::bad_alloc& e)
@@ -55,7 +55,7 @@ AForm* Intern::makeForm(std::string name, std::string target)
 		case 2:
 			try
 			{
-				form = new ShrubberyCreationForm(target, 25 ,5);
+				form = new ShrubberyCreationForm(target);
 				break;	
 			}
 			catch(const std::bad_alloc& e)

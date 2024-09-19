@@ -3,6 +3,9 @@
 PresidentalPardonForm::PresidentalPardonForm(): AForm("Obama", 25, 5)
 {}
 
+PresidentalPardonForm::PresidentalPardonForm(std::string target): AForm(target, 25, 5)
+{}
+
 PresidentalPardonForm::~PresidentalPardonForm()
 {}
 
